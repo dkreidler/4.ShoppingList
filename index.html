@@ -35,6 +35,24 @@
         var list = document.querySelector('ul');
         var input = document.querySelector('input');
         var button = doocument.querySelector('button');
+
+        button.onclick = function() {
+            var inputText = input.value;
+            input.textContent = '';
+            var li = '<li>';
+            var span = '<span>';
+            var delButton = '<button>';
+            li.appendChild(span);
+            li.appendChild(button);
+            span.textContent = inputText;
+            button.textContent = 'Delete';
+            ul.appendChild(li);
+            delButton.onclick = function() {
+                //  linkPara.parentNode.removeChild(linkPara);
+                li.parentNode.removeChild(li);
+            }
+            input.focus();
+        }
     </script>
 </body>
 
