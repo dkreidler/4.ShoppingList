@@ -34,22 +34,22 @@
     <script>
         var list = document.querySelector('ul');
         var input = document.querySelector('input');
-        var button = doocument.querySelector('button');
+        var button = document.querySelector('button');
 
         button.onclick = function() {
             var inputText = input.value;
-            input.textContent = '';
-            var li = '<li>';
-            var span = '<span>';
-            var delButton = '<button>';
-            li.appendChild(span);
-            li.appendChild(button);
-            span.textContent = inputText;
-            button.textContent = 'Delete';
-            ul.appendChild(li);
-            delButton.onclick = function() {
+            input.value = '';
+            var listItem = document.createElement('li');
+            var listSpan = document.createElement('span');
+            var listButton = document.createElement('button');
+            listItem.appendChild(listSpan);
+            listItem.appendChild(listButton);
+            listSpan.textContent = inputText;
+            listButton.textContent = 'Delete';
+            list.appendChild(listItem);
+            listButton.onclick = function() {
                 //  linkPara.parentNode.removeChild(linkPara);
-                li.parentNode.removeChild(li);
+                listItem.parentNode.removeChild(listItem);
             }
             input.focus();
         }
